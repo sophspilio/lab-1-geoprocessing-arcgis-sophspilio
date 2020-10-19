@@ -1,16 +1,7 @@
 # LAB 1: GEOPROCESSING IN ARCGIS
 Due: 23 OCT 2020
 
-## THE DATA
-In our class OneDrive, find the [Lab_1_Geoprocessing_ArcGIS folder](https://clarkuedu-my.sharepoint.com/:f:/g/personal/shroberts_clarku_edu/EvQL9wW9T2NGuwJO7_q35tQBqIp4PtuxdLlEHoE_W33hnQ?e=2H3R2z). In this you'll find 3 sub-folders: 
-- _1. Lab 1 instructions_ contains a Word doc with all the tutorial instructions you need. 
-- _Data_Lab_1_Geoprocessing_ArcGIS_ contains the data you need in the form of .shp files.
-- _Results_ is an empty folder you can use to save your outputs to. 
-
-##  WHAT TO SUBMIT
-You will submit two scripts, one screenshot, and a short (150 – 250 word) write up as your README file. Be sure to read the lab sheet carefully since it explains which scripts you need to save! Specifically, your repo should include: 
-- `file.flooding.py` from part 2
-- `my_clip.py` from part 3, and 
-- an image of the lakes_myClip layer from part 3. If you don't know how to add an image to your Github readme you can [view this video](https://www.youtube.com/watch?reload=9&v=hHbWF1Bvgf4) or [see the instructions at the bottom of this readme](https://github.com/Shadrock/code-snippets).
-
-Your read me should explain briefly what you did in the lab and clearly list the contents of the repo and explain what it is so that someone who is not in the class can look at your repo and understand both the lab and the outputs. In example, “file.flooding.py is a Python script for use in ArcMap. The script takes some inputs and then outputs something else…” For guidance on things you should include in your readme, or how to structure it nicely using markdown, [see this web page](https://www.makeareadme.com/). 
+This lab explores using Python within ArcMap. The first script `file.flooding.py`, was created by exporting a model created within the ModelBuilder tool. This script has three parts. It begins by defining the inputs. `floodzones.shp` and `basin.shp` are the two input variables that will be clipped. A temporary variable,  `flood_Clip.shp` is created, and then is used to select the floodzones that are identified as Special Flood Hazard Areas. 
+The second script created during this lab was `my_clip.py`. This script was created in a code editor outside of ArcMap using the `arcpy` module. THis script defined a workspace enviornment, and then ran a clip analysis. Although the script was written outside of ArcMap, the `arcpy` tool allows you to run it and the results will still work within Arc (as long as file names are mapped correctly). This script clipped the `lakes.shp` file using to the extent of `basin.shp`, which ulitimately created a new clipped `lake_myClip.shp`. 
+### Errors? 
+I came across a few issues while trying to finish the `my_clip.py` in Part 3. I used the `file.flooding.py` script as a reference, because I knew that this script had successfully run using `arcpy`. I ended up defining local variables, and after playing around with syntax and file names (using `\\` instead of `\`), I was able to successfully run this script in the Python IDLE and have my result show up in the correct folder in ArcMap. 
